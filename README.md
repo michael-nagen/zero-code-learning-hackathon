@@ -1,20 +1,27 @@
-# Maestro Apps Dashboard
+# The Orange Project
 
-> A responsive React dashboard prototype that brings a learner's apps and tools into one organized workspace.
+> A hackathon proof of concept for making high-quality learning possible at scale — even for people with zero technical skills.
 
-## Overview
+## The idea
 
-Maestro Apps Dashboard is a front-end experience for browsing a curated collection of learning and productivity tools. It presents apps by category, supports multiple browsing layouts, and gives each app a dedicated detail view with contextual actions and resources.
+The Orange Project explores a **zero-code learning experience**: a learner can download an open AI model and the learning software locally, then use the system without relying on a paid, closed AI service. The goal is not to deliver a finished product or a programming course; it is to demonstrate that this learning model can work broadly for people starting from zero.
 
-The project is intentionally focused on the user experience and interaction model. It is a polished prototype rather than a connected production service: primary actions and integrations are represented as clearly marked placeholders.
+## What the concept demonstrates
 
-## Experience highlights
+- **Local-first AI:** learning experiences can run with downloadable open models and free local software.
+- **Accessible by design:** the learner does not need programming knowledge to use the system.
+- **Adaptive instruction:** lesson content and tutor behaviour are shaped around the learner and the teaching goal.
+- **A scalable direction:** the model is intended as a starting point for broader, lower-barrier education.
 
-- **Unified workspace:** groups applications into meaningful sections so users can find the right tool quickly.
-- **Flexible browsing:** lets users switch between track, grid, and compact card layouts.
-- **Application detail pages:** provides a dedicated overview, activity, and resources view for every configured app.
-- **Consistent visual system:** uses shared layout, typography, color, icon, and status primitives across the experience.
-- **Responsive interaction:** adapts the dashboard layout to available space and preserves navigation context between screens.
+## My contribution
+
+Beyond the visual dashboard, I designed and implemented the orchestration layer behind the learning experience. It processes lesson material, learner context, and teaching objectives to build an instructional plan.
+
+The orchestration decides how to structure the lesson and the tutor, and selects the appropriate prompt for the specific learning situation. In practice, that means turning the question “what is the best lesson and teacher for this learner right now?” into a controlled workflow rather than a single generic prompt.
+
+## Prototype scope
+
+This repository is a hackathon prototype and a product exploration — not a finished learning platform. The included React dashboard demonstrates the interface and interaction model for organizing learning tools. Production integrations, persistent learner data, authentication, and local model runtime are intentionally outside the current scope.
 
 ## Technology
 
@@ -30,33 +37,16 @@ npm install
 npm run dev
 ```
 
-Vite will print the local URL in the terminal. For a production build:
+For a production build:
 
 ```bash
 npm run build
 npm run preview
 ```
 
-## Project structure
-
-```text
-src/
-├── components/   # Reusable cards, icons, badges, and shared UI
-├── contexts/     # App-shell state: layout preference and toast feedback
-├── data/         # App catalogue, section configuration, and screen content
-├── layouts/      # Shared application shell
-├── pages/        # Dashboard and per-app detail views
-└── App.tsx       # Route definitions
-```
-
-## Current scope
-
-This repository demonstrates the dashboard's interface, navigation, and local interaction states. Actions that would normally open an external app, apply settings, or load live activity are intentionally marked `TODO`; connecting them to real services is the natural next implementation step.
-
 ## Next steps
 
-- Connect configured apps to real destinations or APIs
-- Add authentication and role-aware app visibility
-- Persist user layout preferences
-- Replace placeholder activity and resource data with live content
-- Add component and end-to-end test coverage
+- Connect the orchestration layer to a local open-weight model runtime
+- Add learner profiles and persisted learning progress
+- Evaluate lesson and tutor strategies with real learner feedback
+- Turn the hackathon proof of concept into a complete learning product
