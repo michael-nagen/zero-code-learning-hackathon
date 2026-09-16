@@ -1,25 +1,62 @@
-# CODING AGENTS: READ THIS FIRST
+# Maestro Apps Dashboard
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+> A responsive React dashboard prototype that brings a learner's apps and tools into one organized workspace.
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
+## Overview
 
-## What you should do — IMPORTANT
+Maestro Apps Dashboard is a front-end experience for browsing a curated collection of learning and productivity tools. It presents apps by category, supports multiple browsing layouts, and gives each app a dedicated detail view with contextual actions and resources.
 
-**Read the chat transcripts first.** There are 1 chat transcript(s) in `chats/`. The transcripts show the full back-and-forth between the user and the design assistant — they tell you **what the user actually wants** and **where they landed** after iterating. Don't skip them. The final HTML files are the output, but the chat is where the intent lives.
+The project is intentionally focused on the user experience and interaction model. It is a polished prototype rather than a connected production service: primary actions and integrations are represented as clearly marked placeholders.
 
-**Read `project/Apps Dashboard.dc.html` in full.** The user had this file open when they triggered the handoff, so it's almost certainly the primary design they want built. Read it top to bottom — don't skim. Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
+## Experience highlights
 
-**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
+- **Unified workspace:** groups applications into meaningful sections so users can find the right tool quickly.
+- **Flexible browsing:** lets users switch between track, grid, and compact card layouts.
+- **Application detail pages:** provides a dedicated overview, activity, and resources view for every configured app.
+- **Consistent visual system:** uses shared layout, typography, color, icon, and status primitives across the experience.
+- **Responsive interaction:** adapts the dashboard layout to available space and preserves navigation context between screens.
 
-## About the design files
+## Technology
 
-The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
+- React 18
+- TypeScript
+- Vite
+- React Router
 
-**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
+## Run locally
 
-## Bundle contents
+```bash
+npm install
+npm run dev
+```
 
-- `README.md` — this file
-- `chats/` — conversation transcripts (read these!)
-- `project/` — the `UI implementation with design inspiration` project files (HTML prototypes, assets, components)
+Vite will print the local URL in the terminal. For a production build:
+
+```bash
+npm run build
+npm run preview
+```
+
+## Project structure
+
+```text
+src/
+├── components/   # Reusable cards, icons, badges, and shared UI
+├── contexts/     # App-shell state: layout preference and toast feedback
+├── data/         # App catalogue, section configuration, and screen content
+├── layouts/      # Shared application shell
+├── pages/        # Dashboard and per-app detail views
+└── App.tsx       # Route definitions
+```
+
+## Current scope
+
+This repository demonstrates the dashboard's interface, navigation, and local interaction states. Actions that would normally open an external app, apply settings, or load live activity are intentionally marked `TODO`; connecting them to real services is the natural next implementation step.
+
+## Next steps
+
+- Connect configured apps to real destinations or APIs
+- Add authentication and role-aware app visibility
+- Persist user layout preferences
+- Replace placeholder activity and resource data with live content
+- Add component and end-to-end test coverage
